@@ -7,6 +7,8 @@ public class PickUp : MonoBehaviour
     public int ballnumber = 0;
     public bool isBall = true;
     public bool isPickedUp = false;
+    public float Distance1 = 1;
+    public float Distance2 = 1;
     public List<bool> CanPickUp;
     // Start is called before the first frame update
     void Start()
@@ -19,9 +21,9 @@ public class PickUp : MonoBehaviour
     {
         if (isBall == true)
         {
-            GameObject.Find("Player1").GetComponent<RutMove>().Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player1").transform.position);
-            GameObject.Find("Player2").GetComponent<RutMove>().Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player2").transform.position);
-            if (GameObject.Find("Player1").GetComponent<RutMove>().Distance1 >= 1)
+            Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player1").transform.position);
+            Distance2 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player2").transform.position);
+            if (Distance1 <= 1)
             {
                 if (isPickedUp == false)
                 {
@@ -29,10 +31,13 @@ public class PickUp : MonoBehaviour
                 }
                 isPickedUp = true;
             }
-            if (GameObject.Find("Player2").GetComponent<RutMove>().Distance2 >= 1)
+            if (Distance2 <= 1)
             {
+                if (isPickedUp == false)
+                {
+                    GameObject.Find("Player2").GetComponent<RutMove>().PickedUp.Add(gameObject);
+                }
                 isPickedUp = true;
-                GameObject.Find("Player2").GetComponent<RutMove>().PickedUp.Add(gameObject);
             }
         }
 
