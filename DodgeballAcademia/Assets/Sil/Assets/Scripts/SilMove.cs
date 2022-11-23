@@ -20,24 +20,18 @@ public class SilMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A) && gameObject.name == "Player1"){gameObject.transform.position = new Vector3(transform.position.x - Speed * Time.deltaTime, transform.position.y, transform.position.z);}
-        if (Input.GetKey(KeyCode.LeftArrow) && gameObject.name == "Player2"){gameObject.transform.position = new Vector3(transform.position.x - Speed * Time.deltaTime, transform.position.y, transform.position.z);}
+        if (Input.GetKey(KeyCode.A) && gameObject.name == "Player1") {gameObject.transform.position = new Vector3(transform.position.x - Speed * Time.deltaTime, transform.position.y, transform.position.z);}
+        if (Input.GetKey(KeyCode.LeftArrow) && gameObject.name == "Player4") {gameObject.transform.position = new Vector3(transform.position.x - Speed * Time.deltaTime, transform.position.y, transform.position.z);}
 
-        if (Input.GetKey(KeyCode.D) && gameObject.name == "Player1"){gameObject.transform.position = new Vector3(transform.position.x + Speed * Time.deltaTime, transform.position.y, transform.position.z);}
-        if (Input.GetKey(KeyCode.RightArrow) && gameObject.name == "Player2"){gameObject.transform.position = new Vector3(transform.position.x + Speed * Time.deltaTime, transform.position.y, transform.position.z);}
+        if (Input.GetKey(KeyCode.D) && gameObject.name == "Player1") {gameObject.transform.position = new Vector3(transform.position.x + Speed * Time.deltaTime, transform.position.y, transform.position.z);}
+        if (Input.GetKey(KeyCode.RightArrow) && gameObject.name == "Player4") {gameObject.transform.position = new Vector3(transform.position.x + Speed * Time.deltaTime, transform.position.y, transform.position.z);}
 
-        if (Input.GetKey(KeyCode.S) && gameObject.name == "Player1"){gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - Speed * Time.deltaTime);}
-        if (Input.GetKey(KeyCode.DownArrow) && gameObject.name == "Player2"){gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - Speed * Time.deltaTime);}
+        if (Input.GetKey(KeyCode.S) && gameObject.name == "Player1") {gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - Speed * Time.deltaTime);}
+        if (Input.GetKey(KeyCode.DownArrow) && gameObject.name == "Player4") {gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - Speed * Time.deltaTime);}
 
 
-        if (Input.GetKey(KeyCode.W) && gameObject.name == "Player1")
-        {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.UpArrow) && gameObject.name == "Player2")
-        {
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Speed * Time.deltaTime);
-        }
+        if (Input.GetKey(KeyCode.W) && gameObject.name == "Player1"){gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Speed * Time.deltaTime);}
+        if (Input.GetKey(KeyCode.UpArrow) && gameObject.name == "Player4"){gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Speed * Time.deltaTime);}
 
         if (isJumping == true)
         {
@@ -56,7 +50,7 @@ public class SilMove : MonoBehaviour
             {
                 isJumping = true;
             }
-            if (Input.GetKeyDown(KeyCode.RightShift) && gameObject.name == "Player2")
+            if (Input.GetKeyDown(KeyCode.RightShift) && gameObject.name == "Player4")
             {
                 isJumping = true;
             }
