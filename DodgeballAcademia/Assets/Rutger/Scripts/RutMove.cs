@@ -10,6 +10,7 @@ public class RutMove : MonoBehaviour
     [SerializeField] float Tijd;
     [SerializeField] bool isJumping;
     [SerializeField] bool isJumpingDown;
+    public List<GameObject> PickedUp;
     public float Distance1 = 1;
     public float Distance2 = 1;
     // Start is called before the first frame update
