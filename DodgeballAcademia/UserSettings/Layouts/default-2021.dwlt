@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 100
+  controlID: 104
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 90
+  controlID: 38
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 91
+  controlID: 39
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Rutger/Scripts
+    - Assets/Sil
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Rutger/Scripts
+  - Assets/Sil
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\info\OneDrive\Bureaublad\Vertical slice\Bo-Verticle-Slice-try2\BO-Vertical-Slice\DodgeballAcademia
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7a5a0000
-    m_LastClickedID: 23162
-    m_ExpandedIDs: 00000000505a00005c5a0000605a0000905a000000ca9a3bffffff7f
+    m_SelectedIDs: 765a0000
+    m_LastClickedID: 23158
+    m_ExpandedIDs: 00000000665a0000725a0000765a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000505a0000
+    m_ExpandedIDs: 00000000665a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -488,9 +488,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 50f0ffff
-      m_LastClickedID: -4016
-      m_ExpandedIDs: 06f2ffff30fbffff
+      m_SelectedIDs: 9c5a0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 52f9ffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -739,9 +739,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 21.49672, y: -17.320793, z: 30.698606}
+    m_Target: {x: 2.2497778, y: -13.130428, z: 38.61028}
     speed: 2
-    m_Value: {x: 21.49672, y: -17.320793, z: 30.698606}
+    m_Value: {x: 2.2497778, y: -13.130428, z: 38.61028}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -788,9 +788,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.21767603, y: -0.262339, z: 0.06090172, w: -0.938106}
+    m_Target: {x: -0.17893958, y: -0.03214852, z: 0.005878894, w: -0.98329467}
     speed: 2
-    m_Value: {x: -0.21768077, y: -0.26234472, z: 0.060903046, w: -0.9381264}
+    m_Value: {x: -0.17893451, y: -0.03362417, z: 0.006147432, w: -0.98326707}
   m_Size:
     m_Target: 23.786861
     speed: 2
