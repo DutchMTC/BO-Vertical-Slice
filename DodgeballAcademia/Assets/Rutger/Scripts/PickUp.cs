@@ -28,6 +28,9 @@ public class PickUp : MonoBehaviour
                 if (isPickedUp == false)
                 {
                     GameObject.Find("Player1").GetComponent<RutMove>().PickedUp.Add(gameObject);
+                    gameObject.transform.position = new Vector3(1, 0, 0);
+                    gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                    gameObject.transform.parent = GameObject.Find("Player1").transform;
                 }
                 isPickedUp = true;
             }
