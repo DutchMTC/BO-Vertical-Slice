@@ -15,6 +15,8 @@ public class FollowTheLeader : MonoBehaviour
     GameObject Player4;
     GameObject Player5;
     GameObject Player6;
+    int numbers;
+
     void Start()
     {
         Player1 = GameObject.Find("Player1");
@@ -29,10 +31,30 @@ public class FollowTheLeader : MonoBehaviour
         ts2.Add(Player4);
         ts2.Add(Player5);
         ts2.Add(Player6);
+        numbers = 0;
     }
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            numbers = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            numbers = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            numbers = 2;
+        }
+        GameObject temp = null;
+        if (Leader1 == numbers)
+        {
+            Debug.Log(numbers);
+            temp = ts1[0];
+            ts1[0] = ts1[numbers];
+            ts1[numbers] = temp;
+        }
     }
 }
