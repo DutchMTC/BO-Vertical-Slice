@@ -27,19 +27,19 @@ public class PickUp : MonoBehaviour
             {
                 if (isPickedUp == false)
                 {
-                    GameObject.Find("Player1").GetComponent<RutMove>().PickedUp.Add(gameObject);
-                    gameObject.SetActive(false);
+                    GameObject.Find("Player1").GetComponent<RutMove>().PickedUp += 1;
+                    Destroy(gameObject);
                 }
-                isPickedUp = true;
+                //isPickedUp = true;
             }
             if (Distance2 <= 1)
             {
                 if (isPickedUp == false)
                 {
-                    GameObject.Find("Player2").GetComponent<RutMove>().PickedUp.Add(gameObject);
-                    gameObject.SetActive(false);
+                    GameObject.Find("Player2").GetComponent<RutMove>().PickedUp += 1;
+                    Destroy(gameObject);
                 }
-                isPickedUp = true;
+                //isPickedUp = true;
             }
         }
 
