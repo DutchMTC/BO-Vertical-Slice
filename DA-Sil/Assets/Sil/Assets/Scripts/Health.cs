@@ -8,12 +8,24 @@ public class Health : MonoBehaviour
     public int maxHp;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        if (hp <= 0) { Destroy(gameObject, 1); }
-        if (hp >= maxHp) { hp = maxHp; }
+        if (hp >= maxHp)
+        {
+            hp = maxHp;
+        }
     }
+    public void TakeDamage(int amountOfDamage)
+    {
+        hp -= amountOfDamage;
+        if (hp <= 0)
+        {
+            Destroy(gameObject, 1);
+        }
+        
+    }
+    
 }
