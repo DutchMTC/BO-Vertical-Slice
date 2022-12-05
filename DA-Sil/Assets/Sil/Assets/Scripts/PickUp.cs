@@ -31,24 +31,27 @@ public class PickUp : MonoBehaviour
         {
             if(gameObject.GetComponent<BallMove>().isInAir == false)
             {
-                Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player1").transform.position);
+                Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.transform.position);
+                //Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player1").transform.position);
                 Distance2 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player2").transform.position);
                 Distance3 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player3").transform.position);
-                Distance4 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player4").transform.position);
+                Distance4 = Vector3.Distance(gameObject.transform.position, GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.transform.position);
+                //Distance4 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player4").transform.position);
                 Distance5 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player5").transform.position);
                 Distance6 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player6").transform.position);
                 if (Distance1 <= 1)
                 {
                     if (isPickedUp == false)
                     {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1 == GameObject.Find("Player1"))
+                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
                         {
-                            GameObject.Find("Player1").GetComponent<Throw>().PickedUp += 1;
+                            GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Throw>().PickedUp += 1;
                             Destroy(gameObject);
                         }
                     }
                     //isPickedUp = true;
                 }
+                /*
                 if (Distance2 <= 1)
                 {
                     if (isPickedUp == false)
@@ -73,17 +76,20 @@ public class PickUp : MonoBehaviour
                     }
                     //isPickedUp = true;
                 }
+                */
                 if (Distance4 <= 1)
                 {
                     if (isPickedUp == false)
                     {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 == GameObject.Find("Player4"))
+                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2)
                         {
-                            GameObject.Find("Player4").GetComponent<Throw>().PickedUp += 1;
+                            GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Throw>().PickedUp += 1;
                             Destroy(gameObject);
                         }
                     }
+                }
                     //isPickedUp = true;
+                /*
                 }
                 if (Distance5 <= 1)
                 {
@@ -108,7 +114,7 @@ public class PickUp : MonoBehaviour
                         }
                     }
                     //isPickedUp = true;
-                }
+                }*/
             }
         }
     }
