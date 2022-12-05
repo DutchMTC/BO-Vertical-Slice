@@ -9,7 +9,8 @@ public class BallMove : MonoBehaviour
     private GameObject leader2;
     private GameObject movementController;
     private GameObject throwManager;
-
+    public bool isInAir = true;
+    internal int thrower;
     private Vector3 movementVector = Vector3.zero;
     public float moveSpeed;
 
@@ -24,12 +25,12 @@ public class BallMove : MonoBehaviour
 
         moveSpeed = 7f;
 
-        if (throwManager.GetComponent<Throw>().thrower == 1)
+        if (thrower == 1)
         {
             transform.position = leader1.transform.position;
             movementVector = (leader2.transform.position - transform.position).normalized * moveSpeed;
         }
-        else if(throwManager.GetComponent<Throw>().thrower == 2)
+        else if(thrower == 2)
         {
             transform.position = leader2.transform.position;
             movementVector = (leader1.transform.position - transform.position).normalized * moveSpeed;

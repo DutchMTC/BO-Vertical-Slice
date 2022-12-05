@@ -5,8 +5,7 @@ using UnityEngine;
 public class Throw : MonoBehaviour
 {
     [SerializeField] private GameObject ball;
-    internal int thrower;
-
+    public int PickedUp;
     void Start()
     {
 
@@ -15,16 +14,25 @@ public class Throw : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (gameObject == GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
         {
-            Instantiate(ball);
-            thrower = 1;
+            if (Input.GetKeyDown(KeyCode.K) && PickedUp > 0)
+            {
+                GameObject Thrown = Instantiate(ball);
+                Thrown.GetComponent<BallMove>().thrower = 1;
+                PickedUp -= 1;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Backslash))
+        if (gameObject == GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2)
         {
-            Instantiate(ball);
-            thrower = 2;
+            if (Input.GetKeyDown(KeyCode.Backslash) && PickedUp > 0)
+            {
+                GameObject Thrown = Instantiate(ball);
+                Thrown.GetComponent<BallMove>().thrower = 2;
+                PickedUp -= 1;
+            }
         }
+
     }
 }

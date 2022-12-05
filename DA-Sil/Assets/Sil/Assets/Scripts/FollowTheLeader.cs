@@ -9,10 +9,10 @@ public class FollowTheLeader : MonoBehaviour
     public Vector3 Distance = new Vector3();
 
     public GameObject leader1;
-    private int leader1Index;
+    public int leader1Index;
 
     public GameObject leader2;
-    private int leader2Index;
+    public int leader2Index;
 
 
     public List<GameObject> ts1 = new List<GameObject>();
