@@ -11,6 +11,8 @@ public class SilMove : MonoBehaviour
     [SerializeField] bool isJumping;
     [SerializeField] bool isJumpingDown;
 
+    [SerializeField] Animator walkAnimator;
+
     private GameObject leader1;
     private GameObject leader2;
 
@@ -29,25 +31,32 @@ public class SilMove : MonoBehaviour
         // Leader1 Movement
         if (Input.GetKey(KeyCode.W))
         {
-            leader1.transform.position = new Vector3(leader1.transform.position.x, leader1.transform.position.y, leader1.transform.position.z + Speed * Time.deltaTime);
+            leader1.transform.position = new Vector3(leader1.transform.position.x, leader1.transform.position.y + Speed * Time.deltaTime, leader1.transform.position.z);
         }
         if (Input.GetKey(KeyCode.A))
         {
             leader1.transform.position = new Vector3(leader1.transform.position.x - Speed * Time.deltaTime, leader1.transform.position.y, leader1.transform.position.z);
+            //walkAnimator.SetBool("isWalking", true);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            leader1.transform.position = new Vector3(leader1.transform.position.x, leader1.transform.position.y, leader1.transform.position.z - Speed * Time.deltaTime);
+            leader1.transform.position = new Vector3(leader1.transform.position.x, leader1.transform.position.y - Speed * Time.deltaTime, leader1.transform.position.z);
+            //walkAnimator.SetBool("isWalking", true);
         }
         if (Input.GetKey(KeyCode.D))
         {
             leader1.transform.position = new Vector3(leader1.transform.position.x + Speed * Time.deltaTime, leader1.transform.position.y, leader1.transform.position.z);
+            //walkAnimator.SetBool("isWalking", true);
+        }
+        if(Input.GetKeyUp(KeyCode.W)|| Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.S)|| Input.GetKeyUp(KeyCode.D))
+        {
+            //walkAnimator.SetBool("isWalking", false);
         }
 
         // Leader2 Movement
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            leader2.transform.position = new Vector3(leader2.transform.position.x, leader2.transform.position.y, leader2.transform.position.z + Speed * Time.deltaTime);
+            leader2.transform.position = new Vector3(leader2.transform.position.x, leader2.transform.position.y + Speed * Time.deltaTime, leader2.transform.position.z);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -55,7 +64,7 @@ public class SilMove : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            leader2.transform.position = new Vector3(leader2.transform.position.x, leader2.transform.position.y, leader2.transform.position.z - Speed * Time.deltaTime);
+            leader2.transform.position = new Vector3(leader2.transform.position.x, leader2.transform.position.y - Speed * Time.deltaTime, leader2.transform.position.z);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
