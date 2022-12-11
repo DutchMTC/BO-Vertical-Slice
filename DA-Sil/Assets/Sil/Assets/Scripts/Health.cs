@@ -38,7 +38,45 @@ public class Health : MonoBehaviour
         hp -= amountOfDamage;
         if (hp <= 0)
         {
-            Destroy(gameObject, 1);
+            if (gameObject == movementController.GetComponent<FollowTheLeader>().leader2)
+            {
+                FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
+                if (followTheLeader.leader2.GetComponent<Throw>().PickedUp > 0)
+                {
+                    for (int i = 0; i < followTheLeader.leader2.GetComponent<Throw>().PickedUp; i++)
+                    {
+                        Instantiate(followTheLeader.leader2.GetComponent<Throw>().ball, followTheLeader.leader1.transform).GetComponent<BallMove>().isInAir = false;
+                    }
+                }
+                followTheLeader.ts2[followTheLeader.leader2Index] = null;
+                movementController.GetComponent<FollowTheLeader>().leader2Index += 1;
+                if (movementController.GetComponent<FollowTheLeader>().leader2Index > 3)
+                {
+                    movementController.GetComponent<FollowTheLeader>().leader2Index = 1;
+                }
+                Destroy(gameObject, 1);
+
+            }
+            if (gameObject == movementController.GetComponent<FollowTheLeader>().leader1)
+            {
+                FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
+                if (followTheLeader.leader1.GetComponent<Throw>().PickedUp > 0)
+                {
+                    for (int i = 0; i < followTheLeader.leader1.GetComponent<Throw>().PickedUp; i++)
+                    {
+                        Instantiate(followTheLeader.leader1.GetComponent<Throw>().ball, followTheLeader.leader1.transform).GetComponent<BallMove>().isInAir = false;
+                    }
+                }
+                followTheLeader.ts1[followTheLeader.leader1Index] = null;
+                movementController.GetComponent<FollowTheLeader>().leader1Index += 1;
+                if (movementController.GetComponent<FollowTheLeader>().leader1Index > 3)
+                {
+                    movementController.GetComponent<FollowTheLeader>().leader1Index = 1;
+                }
+                Destroy(gameObject);
+
+            }
+
         }        
     }
     float HPCalculator()

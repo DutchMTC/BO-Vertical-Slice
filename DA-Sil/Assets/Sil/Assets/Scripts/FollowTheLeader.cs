@@ -17,12 +17,12 @@ public class FollowTheLeader : MonoBehaviour
 
     public List<GameObject> ts1 = new List<GameObject>();
     public List<GameObject> ts2 = new List<GameObject>();
-    GameObject player1;
-    GameObject player2;
-    GameObject player3;
-    GameObject player4;
-    GameObject player5;
-    GameObject player6;
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    public GameObject player5;
+    public GameObject player6;
 
     private Transform leader1Pos;
     private Transform leader2Pos;
@@ -56,14 +56,33 @@ public class FollowTheLeader : MonoBehaviour
         // Leader 1
         if(leader1Index == 0)
         {
-            leader1 = player1;
+            if (player1 != null)
+                leader1 = player1;
+            else
+            {
+                leader1Index += 1;
+            }
         }else if(leader1Index == 1)
         {
-            leader1 = player2;
-        }else if(leader1Index == 2)
+            if (player2 != null)
+                leader1 = player2;
+            else
+            {
+                leader1Index += 1;
+            }
+        }
+        else if(leader1Index == 2)
         {
-            leader1 = player3;
-        }else if(leader1Index == 3)
+            if(player3 != null)
+            {
+                leader1 = player3;
+            }
+            else
+            {
+                leader1Index += 1;
+            }
+        }
+        else if(leader1Index == 3)
         {
             leader1Index = 0;
         }
@@ -91,15 +110,30 @@ public class FollowTheLeader : MonoBehaviour
         // Leader 2
         if (leader2Index == 0)
         {
-            leader2 = player4;
+            if (player4 != null)
+                leader2 = player4;
+            else
+            {
+                leader1Index += 1;
+            }
         }
         else if (leader2Index == 1)
         {
-            leader2 = player5;
+            if (player5 != null)
+                leader2 = player5;
+            else
+            {
+                leader1Index += 1;
+            }
         }
         else if (leader2Index == 2)
         {
-            leader2 = player6;
+            if (player6 != null)
+                leader2 = player6;
+            else
+            {
+                leader1Index += 1;
+            }
         }
         else if (leader2Index == 3)
         {

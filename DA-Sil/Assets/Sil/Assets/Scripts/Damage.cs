@@ -17,7 +17,6 @@ public class Damage : MonoBehaviour
                 {
                     GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Health>().TakeDamage(damage);
                     GetComponent<BallMove>().isInAir = false;
-                    Debug.Log(GetComponent<PickUp>().Distance1);
                 }
             }
         }
