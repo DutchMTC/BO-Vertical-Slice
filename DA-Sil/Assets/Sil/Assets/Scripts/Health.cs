@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
         hp -= amountOfDamage;
         if (hp <= 0)
         {
+            hp = 0;
             if (gameObject == movementController.GetComponent<FollowTheLeader>().leader2)
             {
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
