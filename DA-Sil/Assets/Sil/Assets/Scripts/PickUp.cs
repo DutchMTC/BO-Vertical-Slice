@@ -8,11 +8,11 @@ public class PickUp : MonoBehaviour
     public bool isBall = true;
     public bool isPickedUp = false;
     public float Distance1 = 1;
-    public float Distance2 = 1;
-    public float Distance3 = 1;
+//    public float Distance2 = 1;
+//    public float Distance3 = 1;
     public float Distance4 = 1;
-    public float Distance5 = 1;
-    public float Distance6 = 1;
+//    public float Distance5 = 1;
+//   public float Distance6 = 1;
     public bool thrownByLeft = true;
     // Start is called before the first frame update
     void Start()
@@ -39,12 +39,12 @@ public class PickUp : MonoBehaviour
             {
                 Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.transform.position);
                 //Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player1").transform.position);
-                Distance2 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player2").transform.position);
-                Distance3 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player3").transform.position);
+//                Distance2 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player2").transform.position);
+//                Distance3 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player3").transform.position);
                 Distance4 = Vector3.Distance(gameObject.transform.position, GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.transform.position);
                 //Distance4 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player4").transform.position);
-                Distance5 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player5").transform.position);
-                Distance6 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player6").transform.position);
+//                Distance5 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player5").transform.position);
+//                Distance6 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player6").transform.position);
                 if (Distance1 <= 1)
                 {
                     if (isPickedUp == false)
