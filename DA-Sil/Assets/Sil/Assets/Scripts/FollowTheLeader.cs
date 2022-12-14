@@ -42,7 +42,7 @@ public class FollowTheLeader : MonoBehaviour
         ts2.Add(player5);
         ts2.Add(player6);
 
-        specSpeed = 1f;
+        specSpeed = 100f * Time.deltaTime;
 
         leader1 = player1;
         leader2 = player2;
@@ -80,13 +80,13 @@ public class FollowTheLeader : MonoBehaviour
         }
         else if(leader1 == player2)
         {
-            player1.transform.position = Vector3.MoveTowards(player1.transform.position, new Vector3(leader1Pos.position.x - 250, leader1Pos.position.y + 150, leader1Pos.position.z), specSpeed);
-            player3.transform.position = Vector3.MoveTowards(player3.transform.position, new Vector3(leader1Pos.position.x - 250, leader1Pos.position.y - 150, leader1Pos.position.z), specSpeed);
+            StartCoroutine(followLeader1Above(player1));
+            StartCoroutine(followLeader1Below(player3));
         }
         else if (leader1 == player3)
         {
-            player1.transform.position = Vector3.MoveTowards(player1.transform.position, new Vector3(leader1Pos.position.x - 250, leader1Pos.position.y + 150, leader1Pos.position.z), specSpeed);
-            player2.transform.position = Vector3.MoveTowards(player2.transform.position, new Vector3(leader1Pos.position.x - 250, leader1Pos.position.y - 150, leader1Pos.position.z), specSpeed);
+            StartCoroutine(followLeader1Above(player1));
+            StartCoroutine(followLeader1Below(player2));
         }
 
         // Leader 2
@@ -114,18 +114,18 @@ public class FollowTheLeader : MonoBehaviour
 
         if (leader2 == player4)
         {
-            player5.transform.position = Vector3.MoveTowards(player5.transform.position, new Vector3(leader2Pos.position.x, leader2Pos.position.y, leader2Pos.position.z + 2), specSpeed);
-            player6.transform.position = Vector3.MoveTowards(player6.transform.position, new Vector3(leader2Pos.position.x - 2, leader2Pos.position.y, leader2Pos.position.z), specSpeed);
+            StartCoroutine(followLeader2Above(player5));
+            StartCoroutine(followLeader2Below(player6));
         }
         else if (leader2 == player5)
         {
-            player4.transform.position = Vector3.MoveTowards(player4.transform.position, new Vector3(leader2Pos.position.x, leader2Pos.position.y, leader2Pos.position.z + 2), specSpeed);
-            player6.transform.position = Vector3.MoveTowards(player6.transform.position, new Vector3(leader2Pos.position.x - 2, leader2Pos.position.y, leader2Pos.position.z), specSpeed);
+            StartCoroutine(followLeader2Above(player4));
+            StartCoroutine(followLeader2Below(player6));
         }
         else if (leader2 == player6)
         {
-            player4.transform.position = Vector3.MoveTowards(player4.transform.position, new Vector3(leader2Pos.position.x, leader2Pos.position.y, leader2Pos.position.z + 2), specSpeed);
-            player5.transform.position = Vector3.MoveTowards(player5.transform.position, new Vector3(leader2Pos.position.x - 2, leader2Pos.position.y, leader2Pos.position.z), specSpeed);
+            StartCoroutine(followLeader2Above(player4));
+            StartCoroutine(followLeader2Below(player5));
         }
     }
 
@@ -134,14 +134,29 @@ public class FollowTheLeader : MonoBehaviour
 
         Vector3 leader1Pos = leader1.transform.position;
         yield return new WaitForSeconds(0.2f);
-        player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(leader1Pos.x - 250, leader1Pos.y + 150, leader1Pos.z), specSpeed);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(leader1Pos.x - 200, leader1Pos.y + 100, leader1Pos.z), specSpeed);
     }
 
     IEnumerator followLeader1Below(GameObject player)
     {
         Vector3 leader1Pos = leader1.transform.position;
         yield return new WaitForSeconds(0.2f);
-        player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(leader1Pos.x - 250, leader1Pos.y - 150, leader1Pos.z), specSpeed);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(leader1Pos.x - 200, leader1Pos.y - 100, leader1Pos.z), specSpeed);
+    }
+
+    IEnumerator followLeader2Above(GameObject player)
+    {
+
+        Vector3 leader2Pos = leader2.transform.position;
+        yield return new WaitForSeconds(0.2f);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(leader2Pos.x + 200, leader2Pos.y + 100, leader2Pos.z), specSpeed);
+    }
+
+    IEnumerator followLeader2Below(GameObject player)
+    {
+        Vector3 leader2Pos = leader2.transform.position;
+        yield return new WaitForSeconds(0.2f);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(leader2Pos.x + 200, leader2Pos.y - 100, leader2Pos.z), specSpeed);
     }
 }
 

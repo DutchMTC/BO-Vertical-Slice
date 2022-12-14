@@ -12,25 +12,19 @@ public class MovementDetection : MonoBehaviour
 
     void Start()
     {
-        // Store the initial position of the object
+        // Initialize the previous position to the current position
         previousPosition = transform.position;
     }
 
     void Update()
     {
-        // Check if the object's position has changed
-        if (transform.position != previousPosition)
+        // Check if the position has changed since the previous frame
+        bool isMoving = (transform.position != previousPosition);
+
+        // Only set the "isMoving" parameter if the value has changed
+        if (animator.GetBool("isWalking") != isMoving)
         {
-            // If the animation is not already playing, play the animation
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("OttoWalk"))
-            {
-                animator.Play("OttoWalk");
-            }
-        }
-        else
-        {
-            // If the position has not changed, stop the animation
-            animator.StopPlayback();
+            animator.SetBool("isWalking", isMoving);
         }
 
         // Store the current position for the next frame
