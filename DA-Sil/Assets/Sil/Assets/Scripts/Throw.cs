@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Throw : MonoBehaviour
 {
-    [SerializeField] private GameObject ball;
+    public GameObject ball;
     public int PickedUp;
     void Start()
     {
@@ -20,6 +20,8 @@ public class Throw : MonoBehaviour
             {
                 GameObject Thrown = Instantiate(ball);
                 Thrown.GetComponent<BallMove>().thrower = 1;
+                Thrown.GetComponent<BallMove>().isInAir = true;
+                Thrown.GetComponent<PickUp>().thrownByLeft = true;
                 PickedUp -= 1;
             }
         }
@@ -30,6 +32,8 @@ public class Throw : MonoBehaviour
             {
                 GameObject Thrown = Instantiate(ball);
                 Thrown.GetComponent<BallMove>().thrower = 2;
+                Thrown.GetComponent<BallMove>().isInAir = true;
+                Thrown.GetComponent<PickUp>().thrownByLeft = false;
                 PickedUp -= 1;
             }
         }

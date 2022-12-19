@@ -14,6 +14,9 @@ public class BallMove : MonoBehaviour
     private Vector3 movementVector = Vector3.zero;
     public float moveSpeed;
 
+    Vector3 minPosition = new Vector3(-11.5f, 0f, -7f);
+    Vector3 maxPosition = new Vector3(11.5f, 10f, 7f);
+    bool isIn = true;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,26 @@ public class BallMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += movementVector * Time.deltaTime;
+        if (isInAir == true) 
+        { 
+            for (int i = 0 ; i < 3 && isIn; ++i )
+            {
+                if (transform.position[i] < minPosition[i] || transform.position[i] > maxPosition[i])
+                {
+                    isIn = false;
+                }
+            }
+
+            if (isIn)
+            {
+                Debug.Log("The ball is inside of the area");
+                transform.position += movementVector * Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("The ball is outside of the area");
+                isInAir = false;
+            }
+        }
     }
 }
