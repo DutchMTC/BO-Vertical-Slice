@@ -17,39 +17,35 @@ public class FollowTheLeader : MonoBehaviour
 
     public List<GameObject> ts1 = new List<GameObject>();
     public List<GameObject> ts2 = new List<GameObject>();
-    GameObject player1;
-    GameObject player2;
-    GameObject player3;
-    GameObject player4;
-    GameObject player5;
-    GameObject player6;
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    public GameObject player5;
+    public GameObject player6;
 
     private Transform leader1Pos;
     private Transform leader2Pos;
 
     void Start()
     {
+
         player1 = GameObject.Find("Player1");
         player2 = GameObject.Find("Player2");
         player3 = GameObject.Find("Player3");
         player4 = GameObject.Find("Player4");
         player5 = GameObject.Find("Player5");
         player6 = GameObject.Find("Player6");
-        ts1.Add(player1);
-        ts1.Add(player2);
-        ts1.Add(player3);
-        ts2.Add(player4);
-        ts2.Add(player5);
-        ts2.Add(player6);
 
         specSpeed = 100f * Time.deltaTime;
 
         leader1 = player1;
-        leader2 = player2;
+        leader2 = player4;
     }
 
     void Update()
     {
+
         leader1Pos = leader1.transform;
         leader2Pos = leader2.transform;
 

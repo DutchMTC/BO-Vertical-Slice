@@ -8,25 +8,24 @@ public class BallMove : MonoBehaviour
     private GameObject leader1;
     private GameObject leader2;
     private GameObject movementController;
-    private GameObject throwManager;
     public bool isInAir = true;
     internal int thrower;
     private Vector3 movementVector = Vector3.zero;
     public float moveSpeed;
+    public PolygonCollider2D bounds;
 
-    Vector3 minPosition = new Vector3(-11.5f, 0f, -7f);
-    Vector3 maxPosition = new Vector3(11.5f, 10f, 7f);
-    bool isIn = true;
 
     // Start is called before the first frame update
     void Start()
     {
         movementController = GameObject.Find("MovementController");
-        throwManager = GameObject.Find("ThrowManager");
+
         leader1 = movementController.GetComponent<FollowTheLeader>().leader1;
         leader2 = movementController.GetComponent<FollowTheLeader>().leader2;
 
-        moveSpeed = 7f;
+        bounds = GameObject.Find("PolygonCollider").GetComponent<PolygonCollider2D>();
+
+        moveSpeed = 200f;
 
         if (thrower == 1)
         {
@@ -46,25 +45,13 @@ public class BallMove : MonoBehaviour
     void Update()
     {
         if (isInAir == true) 
-        { 
-            for (int i = 0 ; i < 3 && isIn; ++i )
-            {
-                if (transform.position[i] < minPosition[i] || transform.position[i] > maxPosition[i])
-                {
-                    isIn = false;
-                }
-            }
+        {
+            transform.position += movementVector * Time.deltaTime;
+        }
 
-            if (isIn)
-            {
-                Debug.Log("The ball is inside of the area");
-                transform.position += movementVector * Time.deltaTime;
-            }
-            else
-            {
-                Debug.Log("The ball is outside of the area");
-                isInAir = false;
-            }
+        if (!bounds.OverlapPoint(transform.position))
+        {
+            isInAir = false;
         }
     }
 }

@@ -20,7 +20,7 @@ public class Damage : MonoBehaviour
                 }
             }
         }
-        if (gameObject.GetComponent<PickUp>().Distance4 <= 1)
+        if (gameObject.GetComponent<PickUp>().Distance2 <= 1)
         {
             if (gameObject.GetComponent<PickUp>().isPickedUp == false)
             {

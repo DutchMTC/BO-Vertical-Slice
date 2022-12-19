@@ -9,113 +9,39 @@ public class PickUp : MonoBehaviour
     public bool isPickedUp = false;
     public float Distance1 = 1;
     public float Distance2 = 1;
-    public float Distance3 = 1;
-    public float Distance4 = 1;
-    public float Distance5 = 1;
-    public float Distance6 = 1;
     public List<bool> CanPickUp;
+
+    private GameObject leader1;
+    private GameObject leader2;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isBall == false) 
-        {
+        leader1 = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1;
+        leader2 = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2;
 
-        }
+        Distance1 = Vector2.Distance(gameObject.transform.position, new Vector2(leader1.transform.position.x, leader1.transform.position.y - 60f));
+        Distance2 = Vector2.Distance(gameObject.transform.position, new Vector2(leader2.transform.position.x, leader2.transform.position.y - 60f));
+
         if (isBall == true)
         {
-            if(gameObject.GetComponent<BallMove>().isInAir == false)
+            if (gameObject.GetComponent<BallMove>().isInAir == false && Distance1 <= 40 && isPickedUp == false && GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
             {
-                Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.transform.position);
-                //Distance1 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player1").transform.position);
-                Distance2 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player2").transform.position);
-                Distance3 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player3").transform.position);
-                Distance4 = Vector3.Distance(gameObject.transform.position, GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.transform.position);
-                //Distance4 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player4").transform.position);
-                Distance5 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player5").transform.position);
-                Distance6 = Vector3.Distance(gameObject.transform.position, GameObject.Find("Player6").transform.position);
-                if (Distance1 <= 1)
-                {
-                    if (isPickedUp == false)
-                    {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
-                        {
-                            GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Throw>().PickedUp += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                    //isPickedUp = true;
-                }
-                /*
-                if (Distance2 <= 1)
-                {
-                    if (isPickedUp == false)
-                    {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1 == GameObject.Find("Player2"))
-                        {
-                            GameObject.Find("Player2").GetComponent<Throw>().PickedUp += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                    //isPickedUp = true;
-                }
-                if (Distance3 <= 1)
-                {
-                    if (isPickedUp == false)
-                    {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1 == GameObject.Find("Player3"))
-                        {
-                            GameObject.Find("Player3").GetComponent<Throw>().PickedUp += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                    //isPickedUp = true;
-                }
-                */
-                if (Distance4 <= 1)
-                {
-                    if (isPickedUp == false)
-                    {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2)
-                        {
-                            GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Throw>().PickedUp += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                }
-                    //isPickedUp = true;
-                /*
-                }
-                if (Distance5 <= 1)
-                {
-                    if (isPickedUp == false)
-                    {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 == GameObject.Find("Player5"))
-                        {
-                            GameObject.Find("Player5").GetComponent<Throw>().PickedUp += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                    //isPickedUp = true;
-                }
-                if (Distance6 <= 1)
-                {
-                    if (isPickedUp == false)
-                    {
-                        if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 == GameObject.Find("Player6"))
-                        {
-                            GameObject.Find("Player6").GetComponent<Throw>().PickedUp += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                    //isPickedUp = true;
-                }*/
+                GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Throw>().PickedUp += 1;
+                Destroy(gameObject);
             }
+
+            if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 && Distance2 <= 30 && isPickedUp == false)
+            {
+                GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Throw>().PickedUp += 1;
+                Destroy(gameObject);
+            }
+
         }
     }
 }
