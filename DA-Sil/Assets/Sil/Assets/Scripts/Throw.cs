@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Throw : MonoBehaviour
 {
-    [SerializeField] private GameObject ball;
+    public GameObject ball;
     [SerializeField] private GameObject ballParent;
     public int PickedUp;
     void Start()

@@ -36,7 +36,7 @@ public class PickUp : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 && Distance2 <= 30 && isPickedUp == false)
+            if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 && Distance2 <= 30 && isPickedUp == false && gameObject.GetComponent<BallMove>().isInAir == false)
             {
                 GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Throw>().PickedUp += 1;
                 Destroy(gameObject);

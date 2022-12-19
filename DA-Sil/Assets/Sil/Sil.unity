@@ -267,8 +267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHp: 100
-  slider1: {fileID: 0}
-  slider2: {fileID: 0}
+  slider1: {fileID: 1951352363}
+  slider2: {fileID: 932203976}
 --- !u!224 &52988583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -979,8 +979,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHp: 100
-  slider1: {fileID: 0}
-  slider2: {fileID: 0}
+  slider1: {fileID: 1951352363}
+  slider2: {fileID: 932203976}
 --- !u!114 &227916995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1359,6 +1359,7 @@ GameObject:
   - component: {fileID: 467398120}
   - component: {fileID: 467398119}
   - component: {fileID: 467398122}
+  - component: {fileID: 467398123}
   m_Layer: 5
   m_Name: Ball2
   m_TagString: Untagged
@@ -1457,6 +1458,19 @@ MonoBehaviour:
   Distance1: 1
   Distance2: 1
   CanPickUp: 
+--- !u!114 &467398123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467398117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4016c1bd29a7ee469f9c425a353dda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &503059946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1615,7 @@ GameObject:
   - component: {fileID: 649747195}
   - component: {fileID: 649747194}
   - component: {fileID: 649747197}
+  - component: {fileID: 649747198}
   m_Layer: 5
   m_Name: Ball3
   m_TagString: Untagged
@@ -1699,6 +1714,19 @@ MonoBehaviour:
   Distance1: 1
   Distance2: 1
   CanPickUp: 
+--- !u!114 &649747198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649747192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4016c1bd29a7ee469f9c425a353dda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &659719324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,8 +2386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHp: 100
-  slider1: {fileID: 0}
-  slider2: {fileID: 0}
+  slider1: {fileID: 1951352363}
+  slider2: {fileID: 932203976}
 --- !u!114 &937855886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2375,6 +2403,11 @@ MonoBehaviour:
   ball: {fileID: 1325468185391954018, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 0}
   PickedUp: 0
+--- !u!1 &1072626440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1325468185391954018, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
+  m_PrefabInstance: {fileID: 1325468185674027146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1356375685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,8 +2558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHp: 100
-  slider1: {fileID: 0}
-  slider2: {fileID: 0}
+  slider1: {fileID: 1951352363}
+  slider2: {fileID: 932203976}
 --- !u!224 &1425996592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2772,8 +2805,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHp: 100
-  slider1: {fileID: 0}
-  slider2: {fileID: 0}
+  slider1: {fileID: 1951352363}
+  slider2: {fileID: 932203976}
 --- !u!114 &1433228118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3214,8 +3247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHp: 100
-  slider1: {fileID: 0}
-  slider2: {fileID: 0}
+  slider1: {fileID: 1951352363}
+  slider2: {fileID: 932203976}
 --- !u!224 &1809363303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3325,6 +3358,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1325468185391954019, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   m_PrefabInstance: {fileID: 1325468185674027146}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1869670638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072626440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4016c1bd29a7ee469f9c425a353dda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &1897060184
 GameObject:
   m_ObjectHideFlags: 0
