@@ -9,9 +9,11 @@ public class FollowTheLeader : MonoBehaviour
     public Vector3 Distance = new Vector3();
 
     public GameObject leader1;
+    public GameObject nextLeader1;
     public int leader1Index;
 
     public GameObject leader2;
+    public GameObject nextLeader2;
     public int leader2Index;
 
 
@@ -64,6 +66,31 @@ public class FollowTheLeader : MonoBehaviour
             leader1Index = 0;
         }
 
+        if(leader1 == player1)
+        {
+            nextLeader1 = player2;
+        }else if(leader1 == player2)
+        {
+            nextLeader1 = player3;
+        }
+        else if (leader1 == player3)
+        {
+            nextLeader1 = player1;
+        }
+
+        if (leader2 == player4)
+        {
+            nextLeader2 = player5;
+        }
+        else if (leader2 == player5)
+        {
+            nextLeader2 = player6;
+        }
+        else if (leader2 == player6)
+        {
+            nextLeader2 = player4;
+        }
+
         if (Input.GetKeyDown(KeyCode.V))
         {
             leader1Index++;
@@ -73,16 +100,25 @@ public class FollowTheLeader : MonoBehaviour
         {
             StartCoroutine(followLeader1Above(player2));
             StartCoroutine(followLeader1Below(player3));
+            player1.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            player2.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            player3.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
         }
         else if(leader1 == player2)
         {
-            StartCoroutine(followLeader1Above(player1));
-            StartCoroutine(followLeader1Below(player3));
+            StartCoroutine(followLeader1Above(player3));
+            StartCoroutine(followLeader1Below(player1));
+            player1.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            player2.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            player3.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
         }
         else if (leader1 == player3)
         {
             StartCoroutine(followLeader1Above(player1));
             StartCoroutine(followLeader1Below(player2));
+            player1.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            player2.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            player3.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
         }
 
         // Leader 2
@@ -112,16 +148,25 @@ public class FollowTheLeader : MonoBehaviour
         {
             StartCoroutine(followLeader2Above(player5));
             StartCoroutine(followLeader2Below(player6));
+            player4.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            player5.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            player6.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
         }
         else if (leader2 == player5)
         {
-            StartCoroutine(followLeader2Above(player4));
-            StartCoroutine(followLeader2Below(player6));
+            StartCoroutine(followLeader2Above(player6));
+            StartCoroutine(followLeader2Below(player4));
+            player4.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            player5.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            player6.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
         }
         else if (leader2 == player6)
         {
             StartCoroutine(followLeader2Above(player4));
             StartCoroutine(followLeader2Below(player5));
+            player4.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            player5.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            player6.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
         }
     }
 
