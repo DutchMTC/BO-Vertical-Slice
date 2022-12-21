@@ -12,8 +12,8 @@ public class Charge : MonoBehaviour
     Slider Slider2;
     void Start()
     {
-        Slider1 = GameObject.Find("Charge1").GetComponent<Slider>();
-        Slider2 = GameObject.Find("Charge2").GetComponent<Slider>();
+        Slider1 = GameObject.Find("Canvas1").GetComponent<Slider>();
+        Slider2 = GameObject.Find("Canvas2").GetComponent<Slider>();
     }
 
     
