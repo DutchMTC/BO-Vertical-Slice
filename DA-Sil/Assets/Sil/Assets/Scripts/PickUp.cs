@@ -25,8 +25,8 @@ public class PickUp : MonoBehaviour
         leader1 = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1;
         leader2 = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2;
 
-        Distance1 = Vector2.Distance(gameObject.transform.position, new Vector2(leader1.transform.position.x, leader1.transform.position.y - 60f));
-        Distance2 = Vector2.Distance(gameObject.transform.position, new Vector2(leader2.transform.position.x, leader2.transform.position.y - 60f));
+        Distance1 = Vector2.Distance(gameObject.transform.position, new Vector2(leader1.transform.position.x, leader1.transform.position.y));
+        Distance2 = Vector2.Distance(gameObject.transform.position, new Vector2(leader2.transform.position.x, leader2.transform.position.y));
 
         if (isBall == true)
         {

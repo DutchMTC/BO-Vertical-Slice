@@ -53,11 +53,8 @@ public class Health : MonoBehaviour
                     }
                 }
                 followTheLeader.ts2[followTheLeader.leader2Index] = null;
-                //followTheLeader.ts2PlayersAlive -= 1;
-                //if (followTheLeader.ts2PlayersAlive <= 0)
-               // {
-                //    SceneManager.LoadScene(0);
-                //}
+                
+
                 movementController.GetComponent<FollowTheLeader>().leader2Index += 1;
                 if (movementController.GetComponent<FollowTheLeader>().leader2Index > 3)
                 {

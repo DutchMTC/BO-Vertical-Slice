@@ -9,7 +9,7 @@ public class Damage : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<PickUp>().Distance1 <= 190)
+        if (GetComponent<PickUp>().Distance1 <= 20)
         {
             if (gameObject.GetComponent<PickUp>().isPickedUp == false)
             {
@@ -21,7 +21,7 @@ public class Damage : MonoBehaviour
                 }
             }
         }
-        if (gameObject.GetComponent<PickUp>().Distance2 <= 190)
+        if (gameObject.GetComponent<PickUp>().Distance2 <= 20)
         {
             if (gameObject.GetComponent<PickUp>().isPickedUp == false)
             {
