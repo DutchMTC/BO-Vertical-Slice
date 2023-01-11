@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField] float damage;
-    
+
 
     void Update()
     {
@@ -30,7 +30,7 @@ public class Damage : MonoBehaviour
                     Debug.Log(damage);
                     GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Health>().TakeDamage(damage);
                     GetComponent<BallMove>().isInAir = false;
-                }                
+                }
             }
         }
     }

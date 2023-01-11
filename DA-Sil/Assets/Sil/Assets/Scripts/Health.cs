@@ -53,7 +53,7 @@ public class Health : MonoBehaviour
                     }
                 }
                 followTheLeader.ts2[followTheLeader.leader2Index] = null;
-                
+
 
                 movementController.GetComponent<FollowTheLeader>().leader2Index += 1;
                 if (movementController.GetComponent<FollowTheLeader>().leader2Index > 3)
@@ -135,10 +135,10 @@ public class Health : MonoBehaviour
                 }
                 followTheLeader.ts1[followTheLeader.leader1Index] = null;
                 //followTheLeader.ts1PlayersAlive -= 1;
-               // if (followTheLeader.ts1PlayersAlive <= 0)
-               // {
+                // if (followTheLeader.ts1PlayersAlive <= 0)
+                // {
                 //    SceneManager.LoadScene(0);
-               // }
+                // }
                 movementController.GetComponent<FollowTheLeader>().leader1Index += 1;
                 if (movementController.GetComponent<FollowTheLeader>().leader1Index > 3)
                 {
