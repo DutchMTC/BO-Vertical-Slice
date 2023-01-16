@@ -6,10 +6,23 @@ public class Team1Movement : MonoBehaviour
 {
     // The Animator component that will be used to control the animation
     public Animator animator;
+    private GameObject movementController;
 
+    void Start()
+    {
+        movementController = GameObject.Find("MovementController");
+    }
     void Update()
     {
-        checkTeam1Movement();
+        if(movementController.GetComponent<SilMove>().canMove1 == true)
+        {
+            checkTeam1Movement();
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
     }
 
     private void checkTeam1Movement()

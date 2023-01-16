@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 52988587}
   - component: {fileID: 52988588}
   - component: {fileID: 52988589}
+  - component: {fileID: 52988590}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -196,7 +197,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -266.5, y: -95.00006}
-  m_SizeDelta: {x: 163.3, y: 225}
+  m_SizeDelta: {x: 228.33, y: 225}
   m_Pivot: {x: 0.49999994, y: 0.000000057742}
 --- !u!114 &52988584
 MonoBehaviour:
@@ -218,9 +219,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f4480c08a2b9ac4d9d82eea26ba5b27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45df9617645cf8147be89f2c5a3be014, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -303,6 +304,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &52988590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52988575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4245ae3873e4b9eb445654986b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge1: 0
+  charge2: 0
+  maxCharge: 10
 --- !u!1 &137867525
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +687,7 @@ GameObject:
   - component: {fileID: 227916991}
   - component: {fileID: 227916989}
   - component: {fileID: 227916996}
+  - component: {fileID: 227916997}
   m_Layer: 0
   m_Name: Player6
   m_TagString: Untagged
@@ -751,7 +768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f4480c08a2b9ac4d9d82eea26ba5b27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45df9617645cf8147be89f2c5a3be014, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -813,6 +830,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 227916991}
+--- !u!114 &227916997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227916987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4245ae3873e4b9eb445654986b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge1: 0
+  charge2: 0
+  maxCharge: 10
 --- !u!1 &274378735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInAir: 0
+  thrownByRight: 1
   moveSpeed: 0
   bounds: {fileID: 1402788690}
 --- !u!114 &467398120
@@ -1719,6 +1752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInAir: 0
+  thrownByRight: 1
   moveSpeed: 0
   bounds: {fileID: 1402788690}
 --- !u!114 &649747195
@@ -2210,6 +2244,8 @@ MonoBehaviour:
   Tijd: 0
   isJumping: 0
   isJumpingDown: 0
+  canMove1: 0
+  canMove2: 0
   walkAnimator: {fileID: 52988586}
 --- !u!4 &778539435
 Transform:
@@ -2270,6 +2306,7 @@ GameObject:
   - component: {fileID: 937855882}
   - component: {fileID: 937855880}
   - component: {fileID: 937855887}
+  - component: {fileID: 937855888}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Untagged
@@ -2350,7 +2387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f4480c08a2b9ac4d9d82eea26ba5b27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45df9617645cf8147be89f2c5a3be014, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2412,6 +2449,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 937855882}
+--- !u!114 &937855888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937855878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4245ae3873e4b9eb445654986b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge1: 0
+  charge2: 0
+  maxCharge: 10
 --- !u!1 &1035375988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,6 +3443,7 @@ GameObject:
   - component: {fileID: 1425996595}
   - component: {fileID: 1425996596}
   - component: {fileID: 1425996597}
+  - component: {fileID: 1425996598}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -3447,7 +3500,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -431.2, y: 9.200073}
-  m_SizeDelta: {x: 225, y: 225}
+  m_SizeDelta: {x: 457.3, y: 225}
   m_Pivot: {x: 0.50000006, y: 0.000000115484}
 --- !u!114 &1425996593
 MonoBehaviour:
@@ -3469,7 +3522,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f4480c08a2b9ac4d9d82eea26ba5b27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45df9617645cf8147be89f2c5a3be014, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3533,6 +3586,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {fileID: 1402788690}
+--- !u!114 &1425996598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425996584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4245ae3873e4b9eb445654986b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge1: 0
+  charge2: 0
+  maxCharge: 10
 --- !u!1 &1433228110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3549,6 +3617,7 @@ GameObject:
   - component: {fileID: 1433228114}
   - component: {fileID: 1433228112}
   - component: {fileID: 1433228119}
+  - component: {fileID: 1433228120}
   m_Layer: 0
   m_Name: Player5
   m_TagString: Untagged
@@ -3629,7 +3698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f4480c08a2b9ac4d9d82eea26ba5b27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45df9617645cf8147be89f2c5a3be014, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3691,6 +3760,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1433228114}
+--- !u!114 &1433228120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433228110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4245ae3873e4b9eb445654986b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge1: 0
+  charge2: 0
+  maxCharge: 10
 --- !u!1 &1505353282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,7 +3981,6 @@ GameObject:
   - component: {fileID: 1611395299}
   - component: {fileID: 1611395298}
   - component: {fileID: 1611395297}
-  - component: {fileID: 1611395296}
   m_Layer: 5
   m_Name: Health Bars
   m_TagString: Untagged
@@ -3905,21 +3988,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1611395296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611395295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3ea4245ae3873e4b9eb445654986b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charge1: 0
-  charge2: 0
-  maxCharge: 10
 --- !u!114 &1611395297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4410,6 +4478,7 @@ GameObject:
   - component: {fileID: 1809363306}
   - component: {fileID: 1809363307}
   - component: {fileID: 1809363308}
+  - component: {fileID: 1809363309}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Untagged
@@ -4466,7 +4535,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -481.19995, y: -210.39996}
-  m_SizeDelta: {x: 225, y: 225}
+  m_SizeDelta: {x: 475, y: 225}
   m_Pivot: {x: 0.5, y: -0.000000040978193}
 --- !u!114 &1809363304
 MonoBehaviour:
@@ -4488,7 +4557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f4480c08a2b9ac4d9d82eea26ba5b27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45df9617645cf8147be89f2c5a3be014, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4552,6 +4621,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {fileID: 1402788690}
+--- !u!114 &1809363309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809363295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ea4245ae3873e4b9eb445654986b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge1: 0
+  charge2: 0
+  maxCharge: 10
 --- !u!1 &1810340060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5234,6 +5318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInAir: 1
+  thrownByRight: 1
   moveSpeed: 0
   bounds: {fileID: 0}
 --- !u!114 &585151136557034925

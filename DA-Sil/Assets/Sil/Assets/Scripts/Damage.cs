@@ -9,11 +9,12 @@ public class Damage : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<PickUp>().Distance1 <= 20)
+        if (gameObject.GetComponent<PickUp>().Distance2 <= 20 && GetComponent<BallMove>().thrownByRight == false)
         {
+            Debug.Log("Distance1" + gameObject.GetComponent<PickUp>().Distance2);
             if (gameObject.GetComponent<PickUp>().isPickedUp == false)
             {
-                if (GetComponent<BallMove>().isInAir == true && GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
+                if (GetComponent<BallMove>().isInAir == true)
                 {
                     Debug.Log(damage);
                     GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Health>().TakeDamage(damage);
@@ -21,8 +22,9 @@ public class Damage : MonoBehaviour
                 }
             }
         }
-        if (gameObject.GetComponent<PickUp>().Distance2 <= 20)
+        if (gameObject.GetComponent<PickUp>().Distance1 <= 20 && GetComponent<BallMove>().thrownByRight == true)
         {
+            Debug.Log("Distance2" + gameObject.GetComponent<PickUp>().Distance1);
             if (gameObject.GetComponent<PickUp>().isPickedUp == false)
             {
                 if (GetComponent<BallMove>().isInAir == true)
@@ -33,5 +35,7 @@ public class Damage : MonoBehaviour
                 }
             }
         }
+
+
     }
 }
