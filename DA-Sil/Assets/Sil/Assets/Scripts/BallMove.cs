@@ -30,13 +30,13 @@ public class BallMove : MonoBehaviour
 
         if (thrower == 1)
         {
-            transform.position = leader1.transform.position;
-            movementVector = (leader2.transform.position - transform.position).normalized * moveSpeed;
+            transform.position = new Vector3(leader1.transform.position.x, leader1.transform.position.y + 60, leader1.transform.position.z);
+            movementVector = (new Vector3(leader2.transform.position.x, leader2.transform.position.y + 60, leader2.transform.position.z) - transform.position).normalized * moveSpeed;
         }
         else if (thrower == 2)
         {
-            transform.position = leader2.transform.position;
-            movementVector = (leader1.transform.position - transform.position).normalized * moveSpeed;
+            transform.position = new Vector3(leader2.transform.position.x, leader2.transform.position.y + 60, leader2.transform.position.z);
+            movementVector = (new Vector3(leader1.transform.position.x, leader1.transform.position.y + 60, leader1.transform.position.z) - transform.position).normalized * moveSpeed;
         }
 
 

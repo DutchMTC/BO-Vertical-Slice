@@ -27,12 +27,12 @@ public class PickUp : MonoBehaviour
         leader1 = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1;
         leader2 = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2;
 
-        Distance1 = Vector2.Distance(gameObject.transform.position, new Vector2(leader1.transform.position.x, leader1.transform.position.y));
-        Distance2 = Vector2.Distance(gameObject.transform.position, new Vector2(leader2.transform.position.x, leader2.transform.position.y));
+        Distance1 = Vector2.Distance(gameObject.transform.position, new Vector2(leader1.transform.position.x, leader1.transform.position.y + 60));
+        Distance2 = Vector2.Distance(gameObject.transform.position, new Vector2(leader2.transform.position.x, leader2.transform.position.y + 60));
 
         if (isBall == true)
         {
-            if (gameObject.GetComponent<BallMove>().isInAir == false && Distance1 <= 40 && isPickedUp == false && GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
+            if (gameObject.GetComponent<BallMove>().isInAir == false && Distance1 <= 120 && isPickedUp == false && GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
             {
                 GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Throw>().PickedUp += 1;
                 movementController.GetComponent<SilMove>().freeze1();
@@ -41,7 +41,7 @@ public class PickUp : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 && Distance2 <= 30 && isPickedUp == false && gameObject.GetComponent<BallMove>().isInAir == false)
+            if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 && Distance2 <= 120 && isPickedUp == false && gameObject.GetComponent<BallMove>().isInAir == false)
             {
                 GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Throw>().PickedUp += 1;
                 movementController.GetComponent<SilMove>().freeze2();
