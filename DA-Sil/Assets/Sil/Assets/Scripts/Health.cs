@@ -42,6 +42,7 @@ public class Health : MonoBehaviour
             hp = 0;
             if (gameObject == movementController.GetComponent<FollowTheLeader>().leader2)
             {
+                Destroy(gameObject, 1);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
                 if (followTheLeader.leader2.GetComponent<Throw>().PickedUp > 0)
                 {
@@ -60,6 +61,7 @@ public class Health : MonoBehaviour
                 {
                     movementController.GetComponent<FollowTheLeader>().leader2Index = 1;
                 }
+                
                 if (followTheLeader.leader2Index == 0)
                 {
                     if (followTheLeader.player4 != null)
@@ -118,11 +120,11 @@ public class Health : MonoBehaviour
                         followTheLeader.leader1Index += 1;
                     }
                 }
-                Destroy(gameObject, 1);
-
+                
             }
             if (gameObject == movementController.GetComponent<FollowTheLeader>().leader1)
             {
+                Destroy(gameObject, 1);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
                 if (followTheLeader.leader1.GetComponent<Throw>().PickedUp > 0)
                 {
@@ -144,6 +146,7 @@ public class Health : MonoBehaviour
                 {
                     movementController.GetComponent<FollowTheLeader>().leader1Index = 1;
                 }
+                
                 if (followTheLeader.leader1Index == 0)
                 {
                     if (followTheLeader.player1 != null)
@@ -235,12 +238,12 @@ public class Health : MonoBehaviour
                         followTheLeader.leader1Index += 1;
                     }
                 }
+                
 
                 if (Input.GetKeyDown(KeyCode.V))
                 {
                     followTheLeader.leader1Index++;
                 }
-                Destroy(gameObject);
 
             }
 

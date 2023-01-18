@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1908362482268470562, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 1505353282}
-  PickedUp: 0
+  PickedUp: 30
 --- !u!114 &52988582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,6 +939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 364266777}
   - component: {fileID: 364266776}
+  - component: {fileID: 364266778}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -1057,6 +1058,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &364266778
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364266775}
+  m_Enabled: 1
 --- !u!1 &426719779
 GameObject:
   m_ObjectHideFlags: 0

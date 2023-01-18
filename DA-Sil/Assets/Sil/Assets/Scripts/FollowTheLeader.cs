@@ -98,27 +98,60 @@ public class FollowTheLeader : MonoBehaviour
 
         if(leader1 == player1)
         {
-            StartCoroutine(followLeader1Above(player2));
-            StartCoroutine(followLeader1Below(player3));
-            player1.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
-            player2.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
-            player3.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            if (player2)
+                StartCoroutine(followLeader1Above(player2));
+            if (player3)
+                StartCoroutine(followLeader1Below(player3));
+            if (player1)
+                player1.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            else
+                player1.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player2)
+                player2.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            else
+                player2.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player3)
+                player3.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            else
+                player3.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
         else if(leader1 == player2)
         {
-            StartCoroutine(followLeader1Above(player3));
-            StartCoroutine(followLeader1Below(player1));
-            player1.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
-            player2.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
-            player3.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            if (player3)
+                StartCoroutine(followLeader1Above(player3));
+            if (player1)
+                StartCoroutine(followLeader1Below(player1));
+            if (player1)
+                player1.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            else
+                player1.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player2)
+                player2.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            else
+                player2.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player3)
+                player3.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            else
+                player3.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
         else if (leader1 == player3)
         {
-            StartCoroutine(followLeader1Above(player1));
-            StartCoroutine(followLeader1Below(player2));
-            player1.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
-            player2.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
-            player3.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            if (player1)
+                StartCoroutine(followLeader1Above(player1));
+            if (player2)
+                StartCoroutine(followLeader1Below(player2));
+            if (player1)
+                player1.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            else
+                player1.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player2)
+                player2.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            else
+                player2.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player3)
+                player3.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            else
+                player3.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
 
         // Leader 2
@@ -146,27 +179,60 @@ public class FollowTheLeader : MonoBehaviour
 
         if (leader2 == player4)
         {
-            StartCoroutine(followLeader2Above(player5));
-            StartCoroutine(followLeader2Below(player6));
-            player4.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
-            player5.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
-            player6.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            if (player5)
+                StartCoroutine(followLeader2Above(player5));
+            if (player6)
+                StartCoroutine(followLeader2Below(player6));
+            if (player4)
+                player4.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            else
+                player4.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player5)
+                player5.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            else
+                player5.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player6)
+                player6.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            else
+                player6.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
         else if (leader2 == player5)
         {
-            StartCoroutine(followLeader2Above(player6));
-            StartCoroutine(followLeader2Below(player4));
-            player4.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
-            player5.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
-            player6.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            if (player6)
+                StartCoroutine(followLeader2Above(player6));
+            if (player4)
+                StartCoroutine(followLeader2Below(player4));
+            if (player4)
+                player4.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            else
+                player4.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player5)
+                player5.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            else
+                player5.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player6)
+                player6.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            else
+                player6.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
         else if (leader2 == player6)
         {
-            StartCoroutine(followLeader2Above(player4));
-            StartCoroutine(followLeader2Below(player5));
-            player4.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
-            player5.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
-            player6.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            if (player4)
+                StartCoroutine(followLeader2Above(player4));
+            if (player5)
+                StartCoroutine(followLeader2Below(player5));
+            if (player4)
+                player4.transform.parent.GetComponent<Canvas>().sortingOrder = 3;
+            else
+                player4.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player5)
+                player5.transform.parent.GetComponent<Canvas>().sortingOrder = 5;
+            else
+                player5.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
+            if (player6)
+                player6.transform.parent.GetComponent<Canvas>().sortingOrder = 4;
+            else
+                player6.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
     }
 
