@@ -6,6 +6,8 @@ public class Throw : MonoBehaviour
 {
     public GameObject ball;
     [SerializeField] private GameObject ballParent;
+    [SerializeField] private Animator playerAnim;
+    private int thrower;
     public int PickedUp;
     void Start()
     {
@@ -19,11 +21,8 @@ public class Throw : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.K) && PickedUp > 0)
             {
-                GameObject ballThrown = Instantiate(ball, ballParent.transform);
-                ballThrown.GetComponent<BallMove>().thrower = 1;
-                ball.GetComponent<BallMove>().isInAir = true;
-                ballThrown.GetComponent<BallMove>().thrownByRight = false;
-                PickedUp -= 1;
+                thrower = 1;
+                playerAnim.SetTrigger("ballThrow");
 
             }
         }
@@ -32,13 +31,19 @@ public class Throw : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Backslash) && PickedUp > 0)
             {
-                GameObject Thrown = Instantiate(ball, ballParent.transform);
-                Thrown.GetComponent<BallMove>().thrower = 2;
-                Thrown.GetComponent<BallMove>().thrownByRight = true;
-                ball.GetComponent<BallMove>().isInAir = true;
-                PickedUp -= 1;
+                thrower = 2;
+                playerAnim.SetTrigger("ballThrow");
             }
         }
 
+    }
+
+    public void instantiateBall()
+    {
+        GameObject ballThrown = Instantiate(ball, ballParent.transform);
+        ballThrown.GetComponent<BallMove>().thrower = thrower;
+        ball.GetComponent<BallMove>().isInAir = true;
+        ballThrown.GetComponent<BallMove>().thrownByRight = false;
+        PickedUp -= 1;
     }
 }
