@@ -6,7 +6,13 @@ public class Damage : MonoBehaviour
 {
     [SerializeField] float damage;
     private bool canTakeDamage;
+    [SerializeField] private GameObject hitPrefab;
+    private GameObject hitCanvas;
 
+    void Start()
+    {
+        hitCanvas = GameObject.Find("Effect Canvas");
+    }
     void Update()
     {
         if (gameObject.GetComponent<PickUp>().Distance2 <= 20 && GetComponent<BallMove>().thrownByRight == false)
@@ -18,6 +24,9 @@ public class Damage : MonoBehaviour
                 {
                     Debug.Log(damage);
                     GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Health>().TakeDamage(damage);
+                    GameObject hit = Instantiate(hitPrefab, hitCanvas.transform);
+                    hit.transform.position = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.transform.position + new Vector3(0, 75f, 0);
+                    Destroy(hit, 0.3f);
                     GetComponent<BallMove>().isInAir = false;
                 }
             }
@@ -31,6 +40,9 @@ public class Damage : MonoBehaviour
                 {
                     Debug.Log(damage);
                     GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Health>().TakeDamage(damage);
+                    GameObject hit = Instantiate(hitPrefab, hitCanvas.transform);
+                    hit.transform.position = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.transform.position + new Vector3(0, 75f, 0);
+                    Destroy(hit, 0.3f);
                     GetComponent<BallMove>().isInAir = false;
                 }
             }

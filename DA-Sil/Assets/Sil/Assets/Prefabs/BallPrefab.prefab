@@ -93,6 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInAir: 1
+  isInDelay: 1
+  thrownByRight: 1
+  countDown: 1
   moveSpeed: 0
   bounds: {fileID: 0}
 --- !u!114 &1908362482268470561
@@ -126,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  hitPrefab: {fileID: 7393410651334785099, guid: aa8102c2c5326eb418cc221fbfbc20f4, type: 3}
+  hitCanvas: {fileID: 0}
 --- !u!95 &1908362482268470563
 Animator:
   serializedVersion: 4
