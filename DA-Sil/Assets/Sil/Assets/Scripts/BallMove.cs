@@ -39,6 +39,7 @@ public class BallMove : MonoBehaviour
         {
             transform.position = new Vector3(leader2.transform.position.x, leader2.transform.position.y + 60, leader2.transform.position.z);
             movementVector = (new Vector3(leader1.transform.position.x, leader1.transform.position.y + 60, leader1.transform.position.z) - transform.position).normalized * moveSpeed;
+            transform.Rotate(0, 180, 0);
         }
 
 

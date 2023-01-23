@@ -28,8 +28,6 @@ public class SilMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(canMove1);
-
         leader1 = gameObject.GetComponent<FollowTheLeader>().leader1;
         leader2 = gameObject.GetComponent<FollowTheLeader>().leader2;
 

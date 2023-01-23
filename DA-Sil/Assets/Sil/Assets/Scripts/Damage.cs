@@ -5,13 +5,13 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField] float damage;
-
+    private bool canTakeDamage;
 
     void Update()
     {
         if (gameObject.GetComponent<PickUp>().Distance2 <= 20 && GetComponent<BallMove>().thrownByRight == false)
         {
-            Debug.Log("Distance1" + gameObject.GetComponent<PickUp>().Distance2);
+            Debug.Log("Distance1 = " + gameObject.GetComponent<PickUp>().Distance2);
             if (gameObject.GetComponent<PickUp>().isPickedUp == false)
             {
                 if (GetComponent<BallMove>().isInAir == true)
@@ -24,7 +24,7 @@ public class Damage : MonoBehaviour
         }
         if (gameObject.GetComponent<PickUp>().Distance1 <= 20 && GetComponent<BallMove>().thrownByRight == true)
         {
-            Debug.Log("Distance2" + gameObject.GetComponent<PickUp>().Distance1);
+            Debug.Log("Distance2 = " + gameObject.GetComponent<PickUp>().Distance1);
             if (gameObject.GetComponent<PickUp>().isPickedUp == false)
             {
                 if (GetComponent<BallMove>().isInAir == true)

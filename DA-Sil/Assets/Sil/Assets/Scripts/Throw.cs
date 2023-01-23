@@ -6,14 +6,10 @@ public class Throw : MonoBehaviour
 {
     public GameObject ball;
     [SerializeField] private GameObject ballParent;
-    [SerializeField] private Animator playerAnim;
-    private GameObject movementController;
-    private int thrower;
     public int PickedUp;
     void Start()
     {
         ballParent = GameObject.Find("BallCanvas");
-        movementController = GameObject.Find("MovementController");
     }
 
 
@@ -23,9 +19,8 @@ public class Throw : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.K) && PickedUp > 0)
             {
-                thrower = 1;
-                movementController.GetComponent<SilMove>().freeze1();
-                playerAnim.SetTrigger("ballThrow");
+                GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Animator>().SetTrigger("ballThrow");
+                PickedUp -= 1;
 
             }
         }
@@ -34,20 +29,24 @@ public class Throw : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Backslash) && PickedUp > 0)
             {
-                thrower = 2;
-                movementController.GetComponent<SilMove>().freeze2();
-                playerAnim.SetTrigger("ballThrow");
+                GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Animator>().SetTrigger("ballThrow");
+                PickedUp -= 1;
             }
         }
 
     }
 
-    public void instantiateBall()
+    public void InstantiateBall(int thrower)
     {
-        GameObject ballThrown = Instantiate(ball, ballParent.transform);
-        ballThrown.GetComponent<BallMove>().thrower = thrower;
+        GameObject Thrown = Instantiate(ball, ballParent.transform);
+        Thrown.GetComponent<BallMove>().thrower = thrower;
+        if(thrower == 1)
+        {
+            Thrown.GetComponent<BallMove>().thrownByRight = false;
+        }else if(thrower == 2)
+        {
+            Thrown.GetComponent<BallMove>().thrownByRight = true;
+        }
         ball.GetComponent<BallMove>().isInAir = true;
-        ballThrown.GetComponent<BallMove>().thrownByRight = false;
-        PickedUp -= 1;
     }
 }
