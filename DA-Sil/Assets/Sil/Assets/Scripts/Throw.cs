@@ -7,11 +7,13 @@ public class Throw : MonoBehaviour
     public GameObject ball;
     [SerializeField] private GameObject ballParent;
     [SerializeField] private Animator playerAnim;
+    private GameObject movementController;
     private int thrower;
     public int PickedUp;
     void Start()
     {
         ballParent = GameObject.Find("BallCanvas");
+        movementController = GameObject.Find("MovementController");
     }
 
 
@@ -22,6 +24,7 @@ public class Throw : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.K) && PickedUp > 0)
             {
                 thrower = 1;
+                movementController.GetComponent<SilMove>().freeze1();
                 playerAnim.SetTrigger("ballThrow");
 
             }
@@ -32,6 +35,7 @@ public class Throw : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Backslash) && PickedUp > 0)
             {
                 thrower = 2;
+                movementController.GetComponent<SilMove>().freeze2();
                 playerAnim.SetTrigger("ballThrow");
             }
         }

@@ -51,52 +51,56 @@ public class FollowTheLeader : MonoBehaviour
         leader1Pos = leader1.transform;
         leader2Pos = leader2.transform;
 
-        // Leader 1
-        if(leader1Index == 0)
+        if (leader1 == player1)
         {
-            leader1 = player1;
-        }else if(leader1Index == 1)
-        {
-            leader1 = player2;
-        }else if(leader1Index == 2)
-        {
-            leader1 = player3;
-        }else if(leader1Index == 3)
-        {
-            leader1Index = 0;
+            if (player2)
+                nextLeader1 = player2;
         }
-
-        if(leader1 == player1)
+        else if (leader1 == player2)
         {
-            nextLeader1 = player2;
-        }else if(leader1 == player2)
-        {
-            nextLeader1 = player3;
+            if (player3)
+                nextLeader1 = player3;
         }
         else if (leader1 == player3)
         {
-            nextLeader1 = player1;
+            if (player1)
+                nextLeader1 = player1;
         }
 
         if (leader2 == player4)
         {
-            nextLeader2 = player5;
+            if (player5)
+                nextLeader2 = player5;
+            else if (player6)
+                nextLeader2 = player6;
+            else if (player4)
+                nextLeader2 = player4;
         }
         else if (leader2 == player5)
         {
-            nextLeader2 = player6;
+            if (player6)
+                nextLeader2 = player6;
+            else if (player4)
+                nextLeader2 = player4;
+            else if (player5)
+                nextLeader2 = player5;
         }
         else if (leader2 == player6)
         {
-            nextLeader2 = player4;
+            if (player4)
+                nextLeader2 = player4;
+            else if (player5)
+                nextLeader2 = player5;
+            else if (player6)
+                nextLeader2 = player6;
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            leader1Index++;
+            leader1 = nextLeader1;
         }
 
-        if(leader1 == player1)
+        if (leader1 == player1)
         {
             if (player2)
                 StartCoroutine(followLeader1Above(player2));
@@ -115,7 +119,7 @@ public class FollowTheLeader : MonoBehaviour
             else
                 player3.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
-        else if(leader1 == player2)
+        else if (leader1 == player2)
         {
             if (player3)
                 StartCoroutine(followLeader1Above(player3));
@@ -154,27 +158,9 @@ public class FollowTheLeader : MonoBehaviour
                 player3.transform.parent.GetComponent<Canvas>().sortingOrder = 0;
         }
 
-        // Leader 2
-        if (leader2Index == 0)
-        {
-            leader2 = player4;
-        }
-        else if (leader2Index == 1)
-        {
-            leader2 = player5;
-        }
-        else if (leader2Index == 2)
-        {
-            leader2 = player6;
-        }
-        else if (leader2Index == 3)
-        {
-            leader2Index = 0;
-        }
-
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            leader2Index++;
+            leader2 = nextLeader2;
         }
 
         if (leader2 == player4)
@@ -266,5 +252,4 @@ public class FollowTheLeader : MonoBehaviour
         player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(leader2Pos.x + 200, leader2Pos.y - 100, leader2Pos.z), specSpeed);
     }
 }
-
 

@@ -42,8 +42,9 @@ public class Health : MonoBehaviour
             hp = 0;
             if (gameObject == movementController.GetComponent<FollowTheLeader>().leader2)
             {
-                Destroy(gameObject, 1);
+                Destroy(gameObject);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
+                movementController.GetComponent<FollowTheLeader>().leader2 = followTheLeader.nextLeader2;
                 if (followTheLeader.leader2.GetComponent<Throw>().PickedUp > 0)
                 {
                     for (int i = 0; i < followTheLeader.leader2.GetComponent<Throw>().PickedUp; i++)
@@ -55,77 +56,19 @@ public class Health : MonoBehaviour
                 }
                 followTheLeader.ts2[followTheLeader.leader2Index] = null;
 
-
-                movementController.GetComponent<FollowTheLeader>().leader2Index += 1;
+                movementController.GetComponent<FollowTheLeader>().leader2 = followTheLeader.nextLeader2;
                 if (movementController.GetComponent<FollowTheLeader>().leader2Index > 3)
                 {
                     movementController.GetComponent<FollowTheLeader>().leader2Index = 1;
                 }
-                
-                if (followTheLeader.leader2Index == 0)
-                {
-                    if (followTheLeader.player4 != null)
-                        followTheLeader.leader2 = followTheLeader.player4;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader2Index == 1)
-                {
-                    if (followTheLeader.player5 != null)
-                        followTheLeader.leader2 = followTheLeader.player5;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader2Index == 2)
-                {
-                    if (followTheLeader.player6 != null)
-                        followTheLeader.leader2 = followTheLeader.player6;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader2Index == 3)
-                {
-                    followTheLeader.leader2Index = 0;
-                }
-                if (followTheLeader.leader2Index == 0)
-                {
-                    if (followTheLeader.player4 != null)
-                        followTheLeader.leader2 = followTheLeader.player4;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader2Index == 1)
-                {
-                    if (followTheLeader.player5 != null)
-                        followTheLeader.leader2 = followTheLeader.player5;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader2Index == 2)
-                {
-                    if (followTheLeader.player6 != null)
-                        followTheLeader.leader2 = followTheLeader.player6;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                
+
+
             }
             if (gameObject == movementController.GetComponent<FollowTheLeader>().leader1)
             {
-                Destroy(gameObject, 1);
+                Destroy(gameObject);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
+                followTheLeader.leader1 = followTheLeader.nextLeader1;
                 if (followTheLeader.leader1.GetComponent<Throw>().PickedUp > 0)
                 {
                     for (int i = 0; i < followTheLeader.leader1.GetComponent<Throw>().PickedUp; i++)
@@ -141,110 +84,13 @@ public class Health : MonoBehaviour
                 // {
                 //    SceneManager.LoadScene(0);
                 // }
-                movementController.GetComponent<FollowTheLeader>().leader1Index += 1;
+                //movementController.GetComponent<FollowTheLeader>().leader1 = followTheLeader.nextLeader1;
                 if (movementController.GetComponent<FollowTheLeader>().leader1Index > 3)
                 {
                     movementController.GetComponent<FollowTheLeader>().leader1Index = 1;
                 }
-                
-                if (followTheLeader.leader1Index == 0)
-                {
-                    if (followTheLeader.player1 != null)
-                        followTheLeader.leader1 = followTheLeader.player1;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader1Index == 1)
-                {
-                    if (followTheLeader.player2 != null)
-                        followTheLeader.leader1 = followTheLeader.player2;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader1Index == 2)
-                {
-                    if (followTheLeader.player3 != null)
-                    {
-                        followTheLeader.leader1 = followTheLeader.player3;
-                    }
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                if (followTheLeader.leader1Index == 0)
-                {
-                    if (followTheLeader.player1 != null)
-                        followTheLeader.leader1 = followTheLeader.player1;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader1Index == 1)
-                {
-                    if (followTheLeader.player2 != null)
-                        followTheLeader.leader1 = followTheLeader.player2;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader1Index == 2)
-                {
-                    if (followTheLeader.player3 != null)
-                    {
-                        followTheLeader.leader1 = followTheLeader.player3;
-                    }
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader1Index == 3)
-                {
-                    followTheLeader.leader1Index = 0;
-                }
-                if (followTheLeader.leader1Index == 0)
-                {
-                    if (followTheLeader.player1 != null)
-                        followTheLeader.leader1 = followTheLeader.player1;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader1Index == 1)
-                {
-                    if (followTheLeader.player2 != null)
-                        followTheLeader.leader1 = followTheLeader.player2;
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                else if (followTheLeader.leader1Index == 2)
-                {
-                    if (followTheLeader.player3 != null)
-                    {
-                        followTheLeader.leader1 = followTheLeader.player3;
-                    }
-                    else
-                    {
-                        followTheLeader.leader1Index += 1;
-                    }
-                }
-                
 
-                if (Input.GetKeyDown(KeyCode.V))
-                {
-                    followTheLeader.leader1Index++;
-                }
-
+                followTheLeader.leader1 = followTheLeader.nextLeader1;
             }
 
         }

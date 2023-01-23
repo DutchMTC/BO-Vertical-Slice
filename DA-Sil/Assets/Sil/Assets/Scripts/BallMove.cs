@@ -9,8 +9,10 @@ public class BallMove : MonoBehaviour
     private GameObject leader2;
     private GameObject movementController;
     public bool isInAir = true;
+    public bool isInDelay = true;
     public bool thrownByRight = true;
     internal int thrower;
+    public float countDown = 1;
     private Vector3 movementVector = Vector3.zero;
     public float moveSpeed;
     public PolygonCollider2D bounds;
@@ -45,6 +47,10 @@ public class BallMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (countDown > 0)
+            countDown -= Time.deltaTime;
+        if (countDown <= 0)
+            isInDelay = false;
         if (isInAir == true)
         {
             transform.position += movementVector * Time.deltaTime;
