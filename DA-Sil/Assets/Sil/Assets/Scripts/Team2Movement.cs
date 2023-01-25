@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Team2Movement : MonoBehaviour
@@ -7,6 +8,7 @@ public class Team2Movement : MonoBehaviour
     // The Animator component that will be used to control the animation
     public Animator animator;
     private GameObject movementController;
+    public PolygonCollider2D bounds;
 
     void Start()
     {
@@ -22,6 +24,12 @@ public class Team2Movement : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
+        }
+
+        if (!bounds.OverlapPoint(transform.position))
+        {
+            // If it is, move the gameobject back inside the bounds of the collider.
+            transform.position = bounds.ClosestPoint(transform.position);
         }
     }
 
