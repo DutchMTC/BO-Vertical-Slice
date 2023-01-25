@@ -23,6 +23,6 @@ Dodgeball Academia is a game we created for a school project named Vertical Slic
 
 **ENTER**: Switch Team Leader
 
-**\**: Throw Ball
+**Backslash**: Throw Ball
 
 ![Team 2 Image](https://i.imgur.com/5lnY8N1.png)
