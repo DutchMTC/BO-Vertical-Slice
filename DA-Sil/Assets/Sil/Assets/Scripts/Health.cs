@@ -71,6 +71,7 @@ public class Health : MonoBehaviour
                 followTheLeader.leader1 = followTheLeader.nextLeader1;
                 if (followTheLeader.leader1.GetComponent<Throw>().PickedUp > 0)
                 {
+                    followTheLeader.nextLeader1.GetComponent<Throw>().PickedUp += followTheLeader.leader1.GetComponent<Throw>().PickedUp;
                     for (int i = 0; i < followTheLeader.leader1.GetComponent<Throw>().PickedUp; i++)
                     {
                         GameObject bal = Instantiate(followTheLeader.leader1.GetComponent<Throw>().ball, followTheLeader.leader2.transform);
