@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1908362482268470562, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 1505353282}
-  PickedUp: 30
+  PickedUp: 0
 --- !u!114 &52988582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1908362482268470562, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 1505353282}
-  PickedUp: 30
+  PickedUp: 0
 --- !u!114 &227916996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3239,7 +3239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1908362482268470562, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 1505353282}
-  PickedUp: 30
+  PickedUp: 0
 --- !u!114 &937855887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4496,7 +4496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1908362482268470562, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 1505353282}
-  PickedUp: 30
+  PickedUp: 0
 --- !u!114 &1425996591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4777,7 +4777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1908362482268470562, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 1505353282}
-  PickedUp: 30
+  PickedUp: 0
 --- !u!114 &1433228119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5694,7 +5694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1908362482268470562, guid: 466325d9707d06444a2c54d5d92f6ab4, type: 3}
   ballParent: {fileID: 1505353282}
-  PickedUp: 30
+  PickedUp: 0
 --- !u!114 &1809363302
 MonoBehaviour:
   m_ObjectHideFlags: 0

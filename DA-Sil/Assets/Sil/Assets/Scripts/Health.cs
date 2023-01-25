@@ -44,16 +44,17 @@ public class Health : MonoBehaviour
             {
                 Destroy(gameObject);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
-                movementController.GetComponent<FollowTheLeader>().leader2 = followTheLeader.nextLeader2;
                 if (followTheLeader.leader2.GetComponent<Throw>().PickedUp > 0)
                 {
                     for (int i = 0; i < followTheLeader.leader2.GetComponent<Throw>().PickedUp; i++)
                     {
                         GameObject bal = Instantiate(followTheLeader.leader2.GetComponent<Throw>().ball, followTheLeader.leader2.transform);
                         bal.GetComponent<BallMove>().isInAir = false;
-                        bal.transform.parent = GameObject.Find("Balls").transform;
+                        bal.transform.parent = GameObject.Find("BallCanvas").transform;
                     }
                 }
+                movementController.GetComponent<FollowTheLeader>().leader2 = followTheLeader.nextLeader2;
+
                 followTheLeader.ts2[followTheLeader.leader2Index] = null;
 
                 movementController.GetComponent<FollowTheLeader>().leader2 = followTheLeader.nextLeader2;
@@ -68,17 +69,18 @@ public class Health : MonoBehaviour
             {
                 Destroy(gameObject);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
-                followTheLeader.leader1 = followTheLeader.nextLeader1;
                 if (followTheLeader.leader1.GetComponent<Throw>().PickedUp > 0)
                 {
-                    followTheLeader.nextLeader1.GetComponent<Throw>().PickedUp += followTheLeader.leader1.GetComponent<Throw>().PickedUp;
+                    //followTheLeader.nextLeader1.GetComponent<Throw>().PickedUp += followTheLeader.leader1.GetComponent<Throw>().PickedUp;
                     for (int i = 0; i < followTheLeader.leader1.GetComponent<Throw>().PickedUp; i++)
                     {
-                        GameObject bal = Instantiate(followTheLeader.leader1.GetComponent<Throw>().ball, followTheLeader.leader2.transform);
+                        GameObject bal = Instantiate(followTheLeader.leader1.GetComponent<Throw>().ball, followTheLeader.leader1.transform);
                         bal.GetComponent<BallMove>().isInAir = false;
-                        bal.transform.parent = GameObject.Find("Balls").transform;
+                        bal.transform.parent = GameObject.Find("BallCanvas").transform;
                     }
                 }
+                followTheLeader.leader1 = followTheLeader.nextLeader1;
+
                 followTheLeader.ts1[followTheLeader.leader1Index] = null;
                 //followTheLeader.ts1PlayersAlive -= 1;
                 // if (followTheLeader.ts1PlayersAlive <= 0)
