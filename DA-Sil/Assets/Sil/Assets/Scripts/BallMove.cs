@@ -11,6 +11,7 @@ public class BallMove : MonoBehaviour
     public bool isInAir = true;
     public bool isInDelay = true;
     public bool thrownByRight = true;
+    private bool canBeFrozen = false;
     internal int thrower;
     public float countDown = 1;
     private Vector3 movementVector = Vector3.zero;
@@ -21,12 +22,14 @@ public class BallMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(NoFreeze());
+
         movementController = GameObject.Find("MovementController");
 
         leader1 = movementController.GetComponent<FollowTheLeader>().leader1;
         leader2 = movementController.GetComponent<FollowTheLeader>().leader2;
 
-        bounds = GameObject.Find("PolygonCollider").GetComponent<PolygonCollider2D>();
+        bounds = GameObject.Find("BallCollider").GetComponent<PolygonCollider2D>();
 
         moveSpeed = 500f;
 
@@ -57,9 +60,15 @@ public class BallMove : MonoBehaviour
             transform.position += movementVector * Time.deltaTime;
         }
 
-        if (!bounds.OverlapPoint(transform.position))
+        if (!bounds.OverlapPoint(transform.position) && canBeFrozen)
         {
             isInAir = false;
         }
+    }
+
+    IEnumerator NoFreeze()
+    {
+        yield return new WaitForSeconds(1);
+        canBeFrozen = true;
     }
 }
