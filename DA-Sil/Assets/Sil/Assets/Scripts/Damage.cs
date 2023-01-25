@@ -28,6 +28,8 @@ public class Damage : MonoBehaviour
                     hit.transform.position = GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.transform.position + new Vector3(0, 75f, 0);
                     Destroy(hit, 0.3f);
                     GetComponent<BallMove>().isInAir = false;
+                    GetComponent<BallMove>().countDown = 0.5f;
+                    GetComponent<BallMove>().isInDelay = true;
                 }
             }
         }

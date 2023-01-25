@@ -32,7 +32,7 @@ public class PickUp : MonoBehaviour
 
         if (isBall == true)
         {
-            if (gameObject.GetComponent<BallMove>().isInAir == false && Distance1 <= 40 && isPickedUp == false && gameObject.GetComponent<BallMove>().isInDelay == false && GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
+            if (gameObject.GetComponent<BallMove>().isInAir == false && Distance1 <= 40 && isPickedUp == false && GetComponent<BallMove>().isInDelay == false && GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1)
             {
                 GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader1.GetComponent<Throw>().PickedUp += 1;
                 movementController.GetComponent<SilMove>().freeze1();
@@ -41,7 +41,7 @@ public class PickUp : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 && Distance2 <= 40 && isPickedUp == false && gameObject.GetComponent<BallMove>().isInDelay == false && gameObject.GetComponent<BallMove>().isInAir == false)
+            if (GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2 && Distance2 <= 40 && isPickedUp == false && GetComponent<BallMove>().isInDelay == false && gameObject.GetComponent<BallMove>().isInAir == false)
             {
                 GameObject.Find("MovementController").GetComponent<FollowTheLeader>().leader2.GetComponent<Throw>().PickedUp += 1;
                 movementController.GetComponent<SilMove>().freeze2();

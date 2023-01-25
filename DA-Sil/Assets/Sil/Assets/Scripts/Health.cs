@@ -18,6 +18,15 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
+        if (followTheLeader.team2Alive <= 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+        if (followTheLeader.team1Alive <= 0)
+        {
+            SceneManager.LoadScene(0);
+        }
         if (gameObject == movementController.GetComponent<FollowTheLeader>().leader1)
         {
             slider1 = GameObject.Find("Slider1").GetComponent<Slider>();
@@ -44,6 +53,7 @@ public class Health : MonoBehaviour
             {
                 Destroy(gameObject);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
+                followTheLeader.team2Alive -= 1;
                 if (followTheLeader.leader2.GetComponent<Throw>().PickedUp > 0)
                 {
                     for (int i = 0; i < followTheLeader.leader2.GetComponent<Throw>().PickedUp; i++)
@@ -62,13 +72,13 @@ public class Health : MonoBehaviour
                 {
                     movementController.GetComponent<FollowTheLeader>().leader2Index = 1;
                 }
-
-
+                followTheLeader.ts1[followTheLeader.leader1Index] = null;
             }
             if (gameObject == movementController.GetComponent<FollowTheLeader>().leader1)
             {
                 Destroy(gameObject);
                 FollowTheLeader followTheLeader = GameObject.Find("MovementController").GetComponent<FollowTheLeader>();
+                followTheLeader.team1Alive -= 1;
                 if (followTheLeader.leader1.GetComponent<Throw>().PickedUp > 0)
                 {
                     //followTheLeader.nextLeader1.GetComponent<Throw>().PickedUp += followTheLeader.leader1.GetComponent<Throw>().PickedUp;
@@ -82,11 +92,10 @@ public class Health : MonoBehaviour
                 followTheLeader.leader1 = followTheLeader.nextLeader1;
 
                 followTheLeader.ts1[followTheLeader.leader1Index] = null;
-                //followTheLeader.ts1PlayersAlive -= 1;
-                // if (followTheLeader.ts1PlayersAlive <= 0)
-                // {
-                //    SceneManager.LoadScene(0);
-                // }
+                if (followTheLeader.team1Alive <= 0)
+                {
+                    SceneManager.LoadScene(0);
+                }
                 //movementController.GetComponent<FollowTheLeader>().leader1 = followTheLeader.nextLeader1;
                 if (movementController.GetComponent<FollowTheLeader>().leader1Index > 3)
                 {

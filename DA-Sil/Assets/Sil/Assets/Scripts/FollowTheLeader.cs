@@ -8,6 +8,8 @@ public class FollowTheLeader : MonoBehaviour
 
     public Vector3 Distance = new Vector3();
 
+    public int team1Alive = 3;
+    public int team2Alive = 3;
     public GameObject leader1;
     public GameObject nextLeader1;
     public int leader1Index;

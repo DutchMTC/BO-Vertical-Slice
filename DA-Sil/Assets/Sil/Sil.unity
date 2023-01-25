@@ -2721,6 +2721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   specSpeed: 0
   Distance: {x: 0, y: 0, z: 0}
+  team1Alive: 3
+  team2Alive: 3
   leader1: {fileID: 0}
   nextLeader1: {fileID: 0}
   leader1Index: 0
@@ -2982,6 +2984,14 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 81caaf661ecdc24499598904af42e74b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1082223500118415960, guid: 81caaf661ecdc24499598904af42e74b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1082223500118415960, guid: 81caaf661ecdc24499598904af42e74b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81caaf661ecdc24499598904af42e74b, type: 3}
       propertyPath: m_Name
@@ -4381,6 +4391,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -218.7, y: 55.7}
+      - {x: 789.1162, y: 55.700012}
       - {x: 805.2, y: 55.7}
       - {x: 956.31, y: -319.2}
       - {x: -362.2, y: -319.2}
