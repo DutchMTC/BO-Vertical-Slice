@@ -31,7 +31,7 @@ public class BallMove : MonoBehaviour
 
         bounds = GameObject.Find("BallCollider").GetComponent<PolygonCollider2D>();
 
-        moveSpeed = 500f;
+        moveSpeed = 700f;
 
         if (thrower == 1)
         {
